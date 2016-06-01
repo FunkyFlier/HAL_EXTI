@@ -81,12 +81,15 @@ void EXTI0_IRQHandler(void) {
 
 /* USER CODE BEGIN 1 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-	if (GPIO_Pin == B1_Pin) {
+	//if (HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == 1) {
+		HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
+	//}
+	/*if (GPIO_Pin == B1_Pin) {
 		if (HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin) == 1) {
 			HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
 		}
 
-	}
+	}*/
 
 }
 /* USER CODE END 1 */
